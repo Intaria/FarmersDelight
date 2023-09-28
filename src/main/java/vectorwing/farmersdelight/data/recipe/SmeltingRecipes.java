@@ -24,15 +24,6 @@ public class SmeltingRecipes
 		foodSmeltingRecipes("cooked_bacon", ModItems.BACON.get(), ModItems.COOKED_BACON.get(), 0.35F, consumer);
 		foodSmeltingRecipes("cooked_mutton_chops", ModItems.MUTTON_CHOPS.get(), ModItems.COOKED_MUTTON_CHOPS.get(), 0.35F, consumer);
 
-		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.WHEAT_DOUGH.get()),
-						Items.BREAD, 0.35F, 200)
-				.unlockedBy("has_dough", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.WHEAT_DOUGH.get()))
-				.save(consumer, new ResourceLocation(FarmersDelight.MODID, "bread").toString() + "_from_smelting");
-		SimpleCookingRecipeBuilder.cooking(Ingredient.of(ModItems.WHEAT_DOUGH.get()),
-						Items.BREAD, 0.35F, 100, RecipeSerializer.SMOKING_RECIPE)
-				.unlockedBy("has_dough", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.WHEAT_DOUGH.get()))
-				.save(consumer, new ResourceLocation(FarmersDelight.MODID, "bread").toString() + "_from_smoking");
-
 		SimpleCookingRecipeBuilder.cooking(Ingredient.of(ModItems.HAM.get()),
 						ModItems.SMOKED_HAM.get(), 0.35F, 200, RecipeSerializer.SMOKING_RECIPE)
 				.unlockedBy("has_ham", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HAM.get()))

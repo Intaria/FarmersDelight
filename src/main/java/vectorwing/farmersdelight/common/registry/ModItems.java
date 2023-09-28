@@ -99,8 +99,6 @@ public class ModItems
 			() -> new BlockItem(ModBlocks.RICH_SOIL.get(), basicItem()));
 	public static final RegistryObject<Item> RICH_SOIL_FARMLAND = ITEMS.register("rich_soil_farmland",
 			() -> new BlockItem(ModBlocks.RICH_SOIL_FARMLAND.get(), basicItem()));
-	public static final RegistryObject<Item> ROPE = ITEMS.register("rope",
-			() -> new RopeItem(ModBlocks.ROPE.get(), basicItem()));
 
 	public static final RegistryObject<Item> CANVAS_SIGN = ITEMS.register("canvas_sign",
 			() -> new SignItem(basicItem(), ModBlocks.CANVAS_SIGN.get(), ModBlocks.CANVAS_WALL_SIGN.get()));
@@ -217,8 +215,6 @@ public class ModItems
 			() -> new MelonJuiceItem(drinkItem()));
 	public static final RegistryObject<Item> TOMATO_SAUCE = ITEMS.register("tomato_sauce",
 			() -> new ConsumableItem(foodItem(FoodValues.TOMATO_SAUCE).craftRemainder(Items.BOWL)));
-	public static final RegistryObject<Item> WHEAT_DOUGH = ITEMS.register("wheat_dough",
-			() -> new Item(foodItem(FoodValues.WHEAT_DOUGH)));
 	public static final RegistryObject<Item> RAW_PASTA = ITEMS.register("raw_pasta",
 			() -> new Item(foodItem(FoodValues.RAW_PASTA)));
 	public static final RegistryObject<Item> PUMPKIN_SLICE = ITEMS.register("pumpkin_slice",

@@ -9,6 +9,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -338,19 +339,15 @@ public class CraftingRecipes
 				.define('D', Items.WARPED_TRAPDOOR)
 				.unlockedBy("has_warped_trapdoor", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WARPED_TRAPDOOR))
 				.save(consumer);
-		ShapedRecipeBuilder.shaped(ModItems.ROPE.get(), 4)
-				.pattern("s")
-				.pattern("s")
-				.define('s', ModItems.STRAW.get())
-				.unlockedBy("has_straw", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.STRAW.get()))
-				.save(consumer);
+
 		ShapedRecipeBuilder.shaped(ModItems.SAFETY_NET.get(), 1)
 				.pattern("rr")
 				.pattern("rr")
-				.define('r', ModItems.ROPE.get())
-				.unlockedBy("has_rope", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ROPE.get()))
+				.define('r', ForgeRegistries.BLOCKS.getValue(new ResourceLocation("supplementaries:rope")))
+				.unlockedBy("has_rope", InventoryChangeTrigger.TriggerInstance.hasItems(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("supplementaries:rope"))))
 				.save(consumer);
-		ShapelessRecipeBuilder.shapeless(ModItems.ROPE.get(), 4)
+
+		ShapelessRecipeBuilder.shapeless(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("supplementaries:rope")), 4)
 				.requires(ModItems.SAFETY_NET.get())
 				.unlockedBy("has_safety_net", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SAFETY_NET.get()))
 				.save(consumer, new ResourceLocation(FarmersDelight.MODID, "rope_from_safety_net"));
@@ -573,20 +570,6 @@ public class CraftingRecipes
 				.requires(Items.GLASS_BOTTLE)
 				.unlockedBy("has_melon_slice", InventoryChangeTrigger.TriggerInstance.hasItems(Items.MELON_SLICE))
 				.save(consumer);
-		ShapelessRecipeBuilder.shapeless(ModItems.WHEAT_DOUGH.get(), 3)
-				.requires(Items.WATER_BUCKET)
-				.requires(Items.WHEAT)
-				.requires(Items.WHEAT)
-				.requires(Items.WHEAT)
-				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
-				.save(consumer, new ResourceLocation(FarmersDelight.MODID, "wheat_dough_from_water"));
-		ShapelessRecipeBuilder.shapeless(ModItems.WHEAT_DOUGH.get(), 3)
-				.requires(ForgeTags.EGGS)
-				.requires(Items.WHEAT)
-				.requires(Items.WHEAT)
-				.requires(Items.WHEAT)
-				.unlockedBy("has_wheat", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHEAT))
-				.save(consumer, new ResourceLocation(FarmersDelight.MODID, "wheat_dough_from_eggs"));
 		ShapedRecipeBuilder.shaped(ModItems.PIE_CRUST.get(), 1)
 				.pattern("wMw")
 				.pattern(" w ")

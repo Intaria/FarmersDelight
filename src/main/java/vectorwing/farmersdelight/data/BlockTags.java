@@ -83,7 +83,6 @@ public class BlockTags extends BlockTagsProvider
 
 	protected void registerMinecraftTags() {
 		tag(net.minecraft.tags.BlockTags.CLIMBABLE).add(
-				ModBlocks.ROPE.get(),
 				ModBlocks.TOMATO_CROP.get());
 		tag(net.minecraft.tags.BlockTags.REPLACEABLE_PLANTS).add(
 				ModBlocks.SANDY_SHRUB.get());
@@ -157,7 +156,6 @@ public class BlockTags extends BlockTagsProvider
 				.addTag(net.minecraft.tags.BlockTags.SAND);
 		tag(ModTags.STRAW_BLOCKS).add(
 				ModBlocks.RICE_BAG.get(),
-				ModBlocks.ROPE.get(),
 				ModBlocks.SAFETY_NET.get(),
 				ModBlocks.CANVAS_RUG.get(),
 				ModBlocks.TATAMI.get(),
@@ -172,8 +170,7 @@ public class BlockTags extends BlockTagsProvider
 				ModBlocks.WILD_TOMATOES.get(),
 				ModBlocks.WILD_ONIONS.get(),
 				ModBlocks.WILD_RICE.get());
-		tag(ModTags.ROPES).add(ModBlocks.ROPE.get())
-				.addOptional(new ResourceLocation("quark:rope"))
+		tag(ModTags.ROPES)
 				.addOptional(new ResourceLocation("supplementaries:rope"));
 		tag(ModTags.TRAY_HEAT_SOURCES).add(
 						Blocks.LAVA)

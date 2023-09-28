@@ -151,7 +151,7 @@ public class CookingRecipes
 						new Ingredient.TagValue(ForgeTags.RAW_BEEF),
 						new Ingredient.ItemValue(new ItemStack(Items.BROWN_MUSHROOM))
 				)))
-				.unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get(), ModItems.CABBAGE.get(), ModItems.ONION.get())
+				.unlockedByAnyIngredient(ModItems.CABBAGE.get(), ModItems.ONION.get())
 				.setRecipeBookTab(CookingPotRecipeBookTab.MISC)
 				.build(consumer);
 		CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FISH_STEW.get(), 1, NORMAL_COOKING, MEDIUM_EXP)

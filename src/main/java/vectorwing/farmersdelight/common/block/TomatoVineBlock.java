@@ -93,7 +93,7 @@ public class TomatoVineBlock extends CropBlock
 		if (random.nextFloat() < 0.3F) {
 			BlockPos posAbove = pos.above();
 			BlockState stateAbove = level.getBlockState(posAbove);
-			boolean canClimb = Configuration.ENABLE_TOMATO_VINE_CLIMBING_TAGGED_ROPES.get() ? stateAbove.is(ModTags.ROPES) : stateAbove.is(ModBlocks.ROPE.get());
+			boolean canClimb = Configuration.ENABLE_TOMATO_VINE_CLIMBING_TAGGED_ROPES.get() ? stateAbove.is(ModTags.ROPES) : stateAbove.is(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("supplementaries:rope")));
 			if (canClimb) {
 				int vineHeight;
 				for (vineHeight = 1; level.getBlockState(pos.below(vineHeight)).is(this); ++vineHeight) {
@@ -199,8 +199,8 @@ public class TomatoVineBlock extends CropBlock
 	}
 
 	public static void destroyAndPlaceRope(Level level, BlockPos pos) {
-		Block configuredRopeBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Configuration.DEFAULT_TOMATO_VINE_ROPE.get()));
-		Block finalRopeBlock = configuredRopeBlock != null ? configuredRopeBlock : ModBlocks.ROPE.get();
+		//new ResourceLocation("minecraft", "player_health")
+		Block finalRopeBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation("supplementaries:rope"));
 
 		level.setBlockAndUpdate(pos, finalRopeBlock.defaultBlockState());
 	}

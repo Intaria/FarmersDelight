@@ -59,8 +59,6 @@ public class ModBlocks
 			() -> new StrawBaleBlock(Block.Properties.copy(Blocks.HAY_BLOCK)));
 
 	// Building
-	public static final RegistryObject<Block> ROPE = BLOCKS.register("rope",
-			() -> new RopeBlock(Block.Properties.of(Material.CLOTH_DECORATION).noCollission().noOcclusion().strength(0.2F).sound(SoundType.WOOL)));
 	public static final RegistryObject<Block> SAFETY_NET = BLOCKS.register("safety_net",
 			() -> new SafetyNetBlock(Block.Properties.of(Material.CLOTH_DECORATION).strength(0.2F).sound(SoundType.WOOL)));
 	public static final RegistryObject<Block> OAK_CABINET = BLOCKS.register("oak_cabinet",

@@ -62,7 +62,6 @@ public class ItemModels extends ItemModelProvider
 		Set<Item> spriteBlockItems = Sets.newHashSet(
 				ModItems.FULL_TATAMI_MAT.get(),
 				ModItems.HALF_TATAMI_MAT.get(),
-				ModItems.ROPE.get(),
 				ModItems.CANVAS_SIGN.get(),
 				ModItems.WHITE_CANVAS_SIGN.get(),
 				ModItems.ORANGE_CANVAS_SIGN.get(),
